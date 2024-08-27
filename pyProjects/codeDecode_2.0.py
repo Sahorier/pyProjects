@@ -48,7 +48,7 @@ def dchange(target):
     target = target.replace("7", "g")
     target = target.replace("8", "h")
     target = target.replace("9", "i")
-    target = target.replace("0", "j")
+    # target = target.replace("0", "j")
     target = target.replace("!", "k")
     target = target.replace("@", "l")
     target = target.replace("#", "m")
