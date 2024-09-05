@@ -66,51 +66,51 @@ def dchange(target):
     # target = target.replace("g", "y")
     # target = target.replace("h", "z")
     return target
+if __name__ == "__main__":
+    randomword = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+    print("Welcome to RH Encode/Decoder!")
+    print("Are you want to Encode or decode?")
+    choice = input("Enter 1 to encode or 2 to decode \n> ")
+    clear()
+    print("M@de By RH")
+    text = input("   Enter the text\n>> ")
+    textlist = text.split(" ")
+    codelist = []
+    decodedlist = []
+    codecode = ""
+    decode = ""
+    if choice == "1":
+        for i in textlist:
+            if len(i) < 3:
+                i = i[::-1]
+                i = echange(i)
+                i = i.swapcase()
+                codelist.append(i)
+                
+            else:
+                i = i[1:] + i[:1]
+                i = random.choice(randomword) + random.choice(randomword) + random.choice(randomword) + i + random.choice(randomword) + random.choice(randomword) + random.choice(randomword) 
+                i = echange(i)
+                i = i.swapcase()
+                codelist.append(i)
 
-randomword = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-print("Welcome to RH Encode/Decoder!")
-print("Are you want to Encode or decode?")
-choice = input("Enter 1 to encode or 2 to decode \n> ")
-clear()
-print("M@de By RH")
-text = input("   Enter the text\n>> ")
-textlist = text.split(" ")
-codelist = []
-decodedlist = []
-codecode = ""
-decode = ""
-if choice == "1":
-    for i in textlist:
-        if len(i) < 3:
-            i = i[::-1]
-            i = echange(i)
-            i = i.swapcase()
-            codelist.append(i)
-            
-        else:
-            i = i[1:] + i[:1]
-            i = random.choice(randomword) + random.choice(randomword) + random.choice(randomword) + i + random.choice(randomword) + random.choice(randomword) + random.choice(randomword) 
-            i = echange(i)
-            i = i.swapcase()
-            codelist.append(i)
+    elif choice == "2":
+        text = text.swapcase()
+        decodelist = text.split("0")
+        for b in decodelist:
+            if len(b) < 3:
+                b = b[::-1]
+                b = dchange(b)
+                decodedlist.append(b)
+            else:
+                b = b[-4:-3] + b[3:-4]
+                b = dchange(b)
+                decodedlist.append(b)
 
-elif choice == "2":
-    text = text.swapcase()
-    decodelist = text.split("0")
-    for b in decodelist:
-        if len(b) < 3:
-            b = b[::-1]
-            b = dchange(b)
-            decodedlist.append(b)
-        else:
-            b = b[-4:-3] + b[3:-4]
-            b = dchange(b)
-            decodedlist.append(b)
+    codecode = "0".join(codelist)
+    print(codecode)
 
-codecode = "0".join(codelist)
-print(codecode)
-
-decode = " ".join(decodedlist)
-print(decode.capitalize())
+    decode = " ".join(decodedlist)
+    print(decode.capitalize())
 
 
