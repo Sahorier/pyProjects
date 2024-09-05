@@ -10,3 +10,4 @@ if x == name1 or x == name2:
 else:
     print("Name scanning...")
     print("Sorry,", x," You do not have the permit to enter here.")
+### Not completed and not interested now
